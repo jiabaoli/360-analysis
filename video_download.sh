@@ -10,7 +10,7 @@ youtube-dl -citkvf best https://www.youtube.com/playlist?list=PLrOsmPkJI7vQBRWZc
 
 
 
-#  extract 1 frame per second from video
+#  extract 1 frame per second from vide0
 ##
 ## 
 ## 
