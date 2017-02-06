@@ -12,10 +12,10 @@ youtube-dl -citkvf best https://www.youtube.com/playlist?list=PLrOsmPkJI7vQBRWZc
 
 #  extract 1 frame per second from vide0
 ##
-## 
-## 
+##
+##
 ####
-#### 
+####
 ######
 ffmpeg -i foo.avi -r 1 -s -f image2 foo-%03d.jpeg
 
@@ -24,9 +24,9 @@ ffmpeg -i foo.avi -r 1 -s -f image2 foo-%03d.jpeg
 #  extract images from video
 ##
 ## extract 1 frame per second from each video in directory and saves it to a folder
-## 
+##
 ####
-#### 
+####
 ######
 See extractvid.sh
 
