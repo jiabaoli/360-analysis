@@ -35,3 +35,10 @@ See extractvid.sh
 
 # e.g.
 ./extractvid.sh videos images mp4
+
+
+# Extract 10 second videos
+./extractvidclip.sh videos images mp4
+
+# Extract 10 seconds of frames
+./extractpics.sh videos images mp4
