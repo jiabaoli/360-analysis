@@ -7,7 +7,7 @@ String output = "{";
 
 void setup() {
   size(640, 360);
-  video = new Movie(this, "plane-diff-opt.avi");
+  video = new Movie(this, "people-opt-diff.mp4");
   video.frameRate(30);
   opencv = new OpenCV(this, 640, 360);
   video.loop();
@@ -34,7 +34,7 @@ void draw() {
   strokeWeight(3);
   line(video.width/2, video.height/2, video.width/2 + aveFlow.x*flowScale, video.height/2 + aveFlow.y*flowScale);
   if(frameCount < 300) {
-     saveFrame("plane-diff-opt2-######.png"); 
+     saveFrame("people-opt-diff-######.png"); 
      output =  output + "'frame-" + frameCount + "' : " + aveFlow + ",";
   } else if (frameCount == 301) {
      println(output); 

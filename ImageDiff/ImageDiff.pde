@@ -9,7 +9,7 @@ boolean firstRun = true;
 
 //PImage colorDiff;
 void setup() {
-  String path = sketchPath("")+"img/chute/"; 
+  String path = sketchPath("")+"img/people/"; 
   File[] files = listFiles(path);
   frames =new PImage[files.length];
   size(1280,720);
@@ -25,7 +25,7 @@ void setup() {
   for(int i=0;i<files.length;i++) {
     //println(files[i]);
     opencv = new OpenCV(this, loadImage(files[i].getAbsolutePath()) );
-    opencv.adaptiveThreshold(591,2);
+    opencv.adaptiveThreshold(591,10);
     //opencv.threshold(10);
     frames[i]= opencv.getOutput();
   }
@@ -50,7 +50,7 @@ void draw() {
   }
   
   if(firstRun) {
-    saveFrame("chute-2-######.png");
+    saveFrame("people-######.png");
   }
   
   ind++;
