@@ -9,7 +9,7 @@ boolean firstRun = true;
 
 //PImage colorDiff;
 void setup() {
-  String path = sketchPath("")+"img/life-circle/"; 
+  String path = sketchPath("")+"img/coaster/"; 
   File[] files = listFiles(path);
   frames =new PImage[files.length];
   size(1280,720);
@@ -25,11 +25,12 @@ void setup() {
   for(int i=0;i<files.length;i++) {
     //println(files[i]);
     opencv = new OpenCV(this, loadImage(files[i].getAbsolutePath()) );
-    opencv.adaptiveThreshold(591,12);
+    //opencv.adaptiveThreshold(591,12);
+    opencv.threshold(30);
     frames[i]= opencv.getOutput();
   }
   
-  println("opencv done");
+  println("*******opencv done*********");
 }
 
 void draw() {
@@ -49,7 +50,7 @@ void draw() {
   }
   
   if(firstRun) {
-    saveFrame("life-circle-######.png");
+    saveFrame("coaster-######.png");
   }
   
   ind++;
