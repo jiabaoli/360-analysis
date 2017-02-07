@@ -7,7 +7,7 @@ String output = "{";
 
 void setup() {
   size(1280,720);
-  video = new Movie(this, "lion.mp4");
+  video = new Movie(this, "chute.mp4");
   opencv = new OpenCV(this, 1280, 720);
   video.loop();
   video.play();  
