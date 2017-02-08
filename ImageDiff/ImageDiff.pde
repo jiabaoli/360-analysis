@@ -1,4 +1,4 @@
-import gab.opencv.*;
+ import gab.opencv.*;
 
 OpenCV opencv;
 PImage[] frames;
@@ -9,7 +9,7 @@ boolean firstRun = true;
 
 //PImage colorDiff;
 void setup() {
-  String path = sketchPath("")+"img/people/"; 
+  String path = sketchPath("")+"img/bjork/"; 
   File[] files = listFiles(path);
   frames =new PImage[files.length];
   size(1280,720);
