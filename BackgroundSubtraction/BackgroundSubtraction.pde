@@ -6,9 +6,10 @@ OpenCV opencv;
 boolean firstRun = true;
 int ind = 0;
 int offset = 1;
+float alpha = 1;
 void setup() {
   size(1280, 720);
-  video = new Movie(this, "Aladin.avi");
+  video = new Movie(this, "bjork.avi");
   opencv = new OpenCV(this, 1280, 720);
  
   opencv.startBackgroundSubtraction(5, 3, 0.5);
@@ -18,7 +19,8 @@ void setup() {
 }
 
 void draw() {
-  //image(video, 0, 0);  
+  //image(video, 0, 0); 
+ 
   opencv.loadImage(video);
   
   opencv.updateBackground();
@@ -33,7 +35,8 @@ void draw() {
     //stroke(0, 255, 0);
    // contour.draw();
     
-    stroke(255, 0, 0);
+    stroke(255, 0, 0, alpha);
+   // strokeWeight(alpha);
     beginShape();
     for (PVector point : contour.getPolygonApproximation().getPoints()) {
       vertex(point.x, point.y);
@@ -43,16 +46,17 @@ void draw() {
   
   
   if(firstRun) {
-    saveFrame("people-######.png");
+    saveFrame("bjork-######.png");
+     alpha+=1;
   }
   
   ind++;
-  if(ind+offset > 20) {
+  if(ind+offset > 80) {
      ind = 0; 
      println("loop");
      firstRun = false;
   }
-  delay(10);
+  //delay(10);
   
 }
 
